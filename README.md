@@ -1,4 +1,4 @@
-# numerical_methods
+# Numerical Methods for Ordinary and Partial Differential Equations
 
 # Newton-Raphson Method Documentation
 
@@ -91,3 +91,94 @@ For the value of f`(x0): [4.0, 7.353688572571959, 7.695685291791962, 7.701964046
 ```
 
 This example demonstrates how the code finds an approximate root of the equation `x^3 - 2x^2 - 5` using the Newton-Raphson method.
+
+
+# Gauss-Jacobi Method Documentation
+
+This documentation provides an overview of the Python code that implements the Gauss-Jacobi method for solving systems of linear equations. The Gauss-Jacobi method is an iterative technique used to approximate the solutions to a system of linear equations.
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Prerequisites](#prerequisites)
+3. [Code Structure](#code-structure)
+4. [Functions](#functions)
+    - [gauss_jacobi](#gauss_jacobi)
+    - [test](#test)
+    - [main](#main)
+5. [Usage](#usage)
+6. [Example](#example)
+
+## Introduction <a name="introduction"></a>
+
+The Gauss-Jacobi method is an iterative numerical technique used to solve systems of linear equations. It iteratively updates the values of the variables in the system until a convergence criteria (tolerance or maximum iterations) is met.
+
+## Prerequisites <a name="prerequisites"></a>
+
+Before using this code, make sure you have the following prerequisites:
+
+- Python installed (the code is written in Python 3).
+- The SymPy library for symbolic mathematics. You can install it using `pip install sympy`.
+
+## Code Structure <a name="code-structure"></a>
+
+The code consists of several functions that work together to apply the Gauss-Jacobi method:
+
+- `gauss_jacobi`: Implements the Gauss-Jacobi iterative method to solve a system of linear equations.
+- `test`: A function to test and print the diagonal elements of the coefficient matrix.
+- `main`: The main function that collects user inputs for the system of equations, tolerance, and maximum iterations.
+
+## Functions <a name="functions"></a>
+
+### `gauss_jacobi(coeff_matrix, const_vector, tolerance, max_iterations)` <a name="gauss_jacobi"></a>
+
+This function performs the Gauss-Jacobi iteration to solve a system of linear equations. It takes the following parameters:
+
+- `coeff_matrix`: The coefficient matrix of the system of equations.
+- `const_vector`: The constant vector on the right-hand side of the equations.
+- `tolerance`: The desired tolerance for convergence.
+- `max_iterations`: The maximum number of iterations to perform.
+
+### `test()` <a name="test"></a>
+
+This function is used to test and print the diagonal elements of the coefficient matrix. It is for diagnostic purposes.
+
+### `main()` <a name="main"></a>
+
+The `main` function is the entry point of the code. It collects user inputs for the system of equations, tolerance, and maximum iterations, and then calls the `gauss_jacobi` function to solve the system.
+
+## Usage <a name="usage"></a>
+
+To use this code:
+
+1. Ensure that you have Python and the SymPy library installed.
+2. Copy and paste the code into a Python file (e.g., `gauss_jacobi.py`).
+3. Run the Python file.
+4. Follow the prompts to input the system of linear equations, tolerance, and maximum iterations.
+
+## Example <a name="example"></a>
+
+Here is an example of how to use the code:
+
+```python
+This program solves a system of linear equations using the Gauss-Jacobi method with SymPy.
+Enter the number of equations: 3
+Enter the equations in the form 'a1*x1 + a2*x2 + ... + an*xn = b':
+Enter equation 1: 4*x1 - x2 - x3 = 7
+x1 - x2 - x3 = 3
+4*x1 - 2*x2 + x3 = 1
+[[4, -1, -1], [1, -1, -1], [4, -2, 1]]
+[7, 3, 1]
+Enter the tolerance for convergence: 1e-6
+Enter the maximum number of iterations: 20
+[2.0]
+[2.0]
+[2.0]
+Solution found:
+x1 = 2.00000000000000
+x2 = 2.00000000000000
+x3 = 2.00000000000000
+```
+
+This example demonstrates how the code uses the Gauss-Jacobi method to solve a system of linear equations, producing the solution `[2.0, 2.0, 2.0]`.
+
