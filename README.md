@@ -182,3 +182,150 @@ x3 = 2.00000000000000
 
 This example demonstrates how the code uses the Gauss-Jacobi method to solve a system of linear equations, producing the solution `[2.0, 2.0, 2.0]`.
 
+
+
+
+# Newton Interpolation Method Documentation
+
+This documentation provides an overview of the Python code that implements the Newton Interpolation method for constructing and evaluating interpolation polynomials. The Newton Interpolation method is a mathematical technique used to approximate a function using a polynomial that passes through a set of given data points.
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Prerequisites](#prerequisites)
+3. [Code Structure](#code-structure)
+4. [Functions](#functions)
+    - [newton_interpolation](#newton_interpolation)
+    - [main](#main)
+5. [Usage](#usage)
+6. [Example](#example)
+
+## Introduction <a name="introduction"></a>
+
+The Newton Interpolation method is used to find an interpolating polynomial that fits a set of data points. It is particularly useful in numerical analysis and data approximation.
+
+This code demonstrates the Newton Interpolation method using the SymPy library for symbolic mathematics.
+
+## Prerequisites <a name="prerequisites"></a>
+
+Before using this code, make sure you have the following prerequisites:
+
+- Python installed (the code is written in Python 3).
+- The SymPy library for symbolic mathematics. You can install it using `pip install sympy`.
+
+## Code Structure <a name="code-structure"></a>
+
+The code consists of several functions that work together to perform Newton Interpolation:
+
+- `newton_interpolation`: Computes the interpolation polynomial based on a set of data points.
+- `main`: The main function that collects user inputs, calculates the interpolation polynomial, and evaluates it at a specified value of `x`.
+
+## Functions <a name="functions"></a>
+
+### `newton_interpolation(data_points)` <a name="newton_interpolation"></a>
+
+This function constructs an interpolation polynomial that passes through a set of data points. It takes the following parameters:
+- `data_points`: A list of data points in the form of (x, y) pairs.
+
+### `main()` <a name="main"></a>
+
+The `main` function serves as the entry point for the code. It collects user inputs for the data points and the value of `x` for interpolation. It also orchestrates the interpolation process.
+
+## Usage <a name="usage"></a>
+
+To use this code:
+
+1. Ensure that you have Python and the SymPy library installed.
+2. Copy and paste the code into a Python file (e.g., `newton_interpolation.py`).
+3. Run the Python file.
+4. Follow the prompts to enter data points as (x, y) pairs and specify the value of `x` for interpolation.
+
+## Example <a name="example"></a>
+
+Here is an example of how to use the code:
+
+```python
+Enter data points as (x, y) pairs. Enter 'done' to finish.
+Enter a data point (x, y): 1.0 2.0
+Enter a data point (x, y): 2.0 3.0
+Enter a data point (x, y): 3.0 6.0
+Enter a data point (x, y): done
+
+Interpolation Polynomial:
+2.0 + 1.0*x*(-1.0 + 3.0*x)
+
+Enter a value of x for interpolation: 2.5
+Interpolated value at x = 2.5: y = 3.50000000000000
+```
+
+This example demonstrates how to use the code to calculate an interpolation polynomial that fits a set of data points and then evaluate the polynomial at a specific value of `x`.
+
+
+# Secant Method Documentation
+
+This documentation provides an overview of the Python code that implements the Secant method for finding approximate solutions to equations. The Secant method is an iterative numerical technique used to find the roots of real-valued functions.
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Prerequisites](#prerequisites)
+3. [Code Structure](#code-structure)
+4. [Functions](#functions)
+    - [secant_method](#secant_method)
+5. [Usage](#usage)
+6. [Example](#example)
+
+## Introduction <a name="introduction"></a>
+
+The Secant method is a root-finding algorithm that is similar to the Newton-Raphson method but does not require the evaluation of derivatives. It is a useful technique for finding an approximate root of a real-valued function.
+
+This code demonstrates the Secant method using the SymPy library for symbolic mathematics.
+
+## Prerequisites <a name="prerequisites"></a>
+
+Before using this code, make sure you have the following prerequisites:
+
+- Python installed (the code is written in Python 3).
+- The SymPy library for symbolic mathematics. You can install it using `pip install sympy`.
+
+## Code Structure <a name="code-structure"></a>
+
+The code consists of a single function and an entry point for user interaction:
+
+- `secant_method`: Implements the Secant method to find an approximate root of the equation.
+- User interaction: The code asks the user for the equation and initial guesses.
+
+## Functions <a name="functions"></a>
+
+### `secant_method(func, x0, x1, tol=1e-6, max_iter=100)` <a name="secant_method"></a>
+
+This function performs the Secant method to find an approximate root of the given equation. It takes the following parameters:
+- `func`: The target function to find the root of (as a SymPy expression).
+- `x0`: The first initial guess.
+- `x1`: The second initial guess.
+- `tol`: The desired tolerance for the approximation (default is 1e-6).
+- `max_iter`: The maximum number of iterations allowed (default is 100).
+
+## Usage <a name="usage"></a>
+
+To use this code:
+
+1. Ensure that you have Python and the SymPy library installed.
+2. Copy and paste the code into a Python file (e.g., `secant_method.py`).
+3. Run the Python file.
+4. Follow the prompts to enter the equation and initial guesses for the Secant method.
+
+## Example <a name="example"></a>
+
+Here is an example of how to use the code:
+
+```python
+Enter the equation in terms of 'x': x**3 - 2*x**2 - 5
+Enter the first initial guess (x0): 1
+Enter the second initial guess (x1): 2
+
+Approximate root: 2.16971579393822
+```
+
+This example demonstrates how to use the code to find an approximate root of the equation `x^3 - 2x^2 - 5` using the Secant method. The code prompts the user for the equation and initial guesses and returns the approximate root.
+
