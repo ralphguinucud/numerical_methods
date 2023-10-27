@@ -1,5 +1,7 @@
 # Numerical Methods for Ordinary and Partial Differential Equations
 
+# By: Czarmaigne De Guzman and Ralph Jayson Guinucud
+
 # Newton-Raphson Method Documentation
 
 This documentation provides an overview of the Python code that implements the Newton-Raphson method for finding approximate solutions to equations. The Newton-Raphson method is an iterative numerical technique used to find the roots of real-valued functions.
