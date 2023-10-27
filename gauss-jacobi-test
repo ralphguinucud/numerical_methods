@@ -1,0 +1,95 @@
+import sympy as sp
+
+def gauss_jacobi(coeff_matrix, const_vector, tolerance, max_iterations):
+    x, y, z = sp.symbols('x y z')
+    new_coeff_matrix = sp.Matrix(coeff_matrix)
+    new_diagonal_matrix = new_coeff_matrix
+    reverse_coeff_matrix = sp.Matrix(coeff_matrix)
+    new_reverse_coeff_matrix = []
+    
+    
+    #extract the diagonal elements manually
+    diagonal_elements = [new_coeff_matrix[i, i] for i in range(new_coeff_matrix.shape[0])]
+
+    #print diagonal matrix 
+    print(new_diagonal_matrix.diag(diagonal_elements))
+    
+    inverse_diagonal_matrix = new_diagonal_matrix.diag(diagonal_elements) ** -1
+    print(inverse_diagonal_matrix)
+
+
+    #reverse diagonal
+    #reverse_diagonal_elements = [reverse_coeff_matrix[i, i] for i in range(reverse_coeff_matrix[0])]
+
+    num_rows, num_cols = reverse_coeff_matrix.shape
+
+    # Initialize a list to store the non-diagonal elements
+    non_diagonal_elements = []
+
+    # Loop through the rows and columns of the matrix
+    for i in range(num_rows):
+      for j in range(num_cols):
+           # Check if the element is not on the diagonal (i != j)
+          if i != j:
+              non_diagonal_elements.append(reverse_coeff_matrix[i, j])
+          else:
+              non_diagonal_elements.append(0)
+          
+
+    # Print the non-diagonal elements
+    print("Non-diagonal elements:")
+    print(non_diagonal_elements)
+    new_reverse_coeff_matrix = sp.Matrix(3,3, non_diagonal_elements)
+    print(new_reverse_coeff_matrix)
+    initial_matrix = sp.Matrix([[0],[0],[0]])
+    #iteration begins
+    converted_vector = sp.Matrix(const_vector)
+
+    #iteration needs to be done here
+    for i in range(max_iterations):
+     initial_matrix = inverse_diagonal_matrix * (converted_vector - (new_reverse_coeff_matrix*initial_matrix))
+     initial_matrix = initial_matrix.doit().evalf(tolerance)
+     print(initial_matrix)
+
+    return initial_matrix
+
+
+
+
+def main():
+    #test()
+    coeff_matrix = []
+    const_vector = []
+    
+    print("This program solves a system of linear equations using the Gauss-Jacobi method with SymPy.")
+    
+    n = int(input("Enter the number of equations: "))
+    
+    print("Enter the equations in the form 'a1*x1 + a2*x2 + ... + an*xn = b':")
+    x = [sp.Symbol(f'x{i+1}') for i in range(n)]
+    
+    for i in range(n):
+        equation = input(f"Enter equation {i+1}: ")
+        lhs, rhs = equation.split("=")
+        print(lhs)
+        print(rhs)
+        lhs_expr = sp.parse_expr(lhs.strip())
+        rhs_expr = sp.parse_expr(rhs.strip())
+        coeff_matrix.append([lhs_expr.coeff(x[j]) for j in range(n)])
+        const_vector.append(rhs_expr)
+        print(coeff_matrix)
+        print(const_vector)
+    tolerance = float(input("Enter the tolerance for convergence: "))
+    max_iterations = int(input("Enter the maximum number of iterations: "))
+    
+    solution = gauss_jacobi(coeff_matrix, const_vector, tolerance, max_iterations)
+    
+    if solution is not None:
+        print("Solution found:")
+        for i, xi in enumerate(solution):
+            print(f'{x[i]} = {xi}')
+    else:
+        print(f"Gauss-Jacobi did not converge after {max_iterations} iterations.")
+
+if __name__ == "__main__":
+    main()
