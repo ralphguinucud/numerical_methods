@@ -1,3 +1,8 @@
+# Numerical Methods for Ordinary and Partial Differential Equations
+
+# By: Czarmaigne De Guzman and Ralph Jayson Guinucud
+
+
 # 1/3 Simpson's Rule Numerical Integration
 
 This is a Python script that implements Simpson's Rule for numerical integration. Simpson's Rule is a numerical method for approximating the definite integral of a function over a specified interval. It provides a more accurate approximation compared to the simpler trapezoidal rule.
