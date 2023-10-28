@@ -372,9 +372,8 @@ The approximate integral is: 0.3333
 - Ensure that the number of intervals (n) is even; Simpson's Rule requires an even number of intervals.
 - Input the function as a valid Python lambda function. For example, to integrate `x^2`, input `x**2`.
 
-## License
-This script is provided under the [MIT License](LICENSE). Feel free to use, modify, and distribute it as needed.
-
+ 
+ 
 # 3/8 Simpson's Rule Numerical Integration
 
 This is a Python script that implements the 3/8 Simpson's Rule for numerical integration. The 3/8 Simpson's Rule is a numerical method for approximating the definite integral of a function over a specified interval, which is especially useful when the number of intervals is a multiple of 3.
@@ -421,8 +420,8 @@ The approximate integral is: 3.0000
 - Ensure that the number of intervals (n) is a multiple of 3; 3/8 Simpson's Rule requires this condition.
 - Input the function as a valid Python lambda function. For example, to integrate `x^2`, input `x**2`.
 
-## License
-This script is provided under the [MIT License](LICENSE). Feel free to use, modify, and distribute it as needed.
+ 
+ 
 
 # Numerical Differentiation with Richardson Extrapolation
 
@@ -474,7 +473,7 @@ print(f"The derivative at x = {x_value} is approximately: {result:.8f}")
 - Adjust `x_value`, `h_value`, and `n_value` as needed for your specific differentiation problem.
 - Richardson Extrapolation is used to improve accuracy by successively halving the step size.
 
-## License
+ 
 
 This script is provided under the MIT License. Feel free to use, modify, and distribute it as needed.
 
@@ -530,6 +529,6 @@ print(f"The derivative at x = {x_value} is approximately: {result:.8f}")
 - Central difference differentiation is used to improve accuracy by taking the difference of function values at nearby points.
 - Richardson Extrapolation is applied to enhance the precision of the derivative approximation.
 
-## License
+ 
 
 This script is provided under the MIT License. Feel free to use, modify, and distribute it as needed.
