@@ -332,7 +332,7 @@ Approximate root: 2.16971579393822
 This example demonstrates how to use the code to find an approximate root of the equation `x^3 - 2x^2 - 5` using the Secant method. The code prompts the user for the equation and initial guesses and returns the approximate root.
 
 
-# Simpson's Rule Numerical Integration
+# 1/3 Simpson's Rule Numerical Integration
 
 This is a Python script that implements Simpson's Rule for numerical integration. Simpson's Rule is a numerical method for approximating the definite integral of a function over a specified interval. It provides a more accurate approximation compared to the simpler trapezoidal rule.
 
